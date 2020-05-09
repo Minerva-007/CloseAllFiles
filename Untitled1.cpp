@@ -4,6 +4,8 @@
 
 void func1()
 {
+        //This function uses the command prompt for the purpose.
+	//Failed because of the command prompt appearing and closing every time the script runs
 	while(1)
 	{
 		Sleep(1000);
@@ -13,6 +15,7 @@ void func1()
 
 void func2()
 {
+	//This function is the silent one: it creates no command prompt.
 	while(1)
 	{
 		Sleep(1000);
@@ -44,5 +47,5 @@ void func2()
 
 int main()
 {
-	func2();
+	func2();//Of course, you can still choose which method to use.
 }
